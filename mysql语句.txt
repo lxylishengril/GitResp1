@@ -1,0 +1,26 @@
+
+
+
+
+
+
+
+
+
+事务级别：
+
+	1：未提交可读 （脏读）read uncommitted;
+	2：已提交可读  orchcle   不可重复读
+	3: 已提交不读   可重复读   mysql
+	4：串读  事务只能串行
+事务用到术语：
+	1：rollback 回滚
+	2：start transaction   取消自动提交
+	3:  commit  提交
+	4：rollback 之后必须再次取消自动提交   start transaction 
+	5:  savepoint +名字保存节点   rollback +名字节点   返回到原来位置
+	6：set global transaction isolation level read uncommitted; 设置全局隔离级别1
+	7：select @@global.tx_isolation;  查看隔离级别  mysql8以后：select @@transaction_isolation；
+	8:set global transaction isolation level read committed; 设置隔离2
+	9:set global transaction isolation level  repeatable read;
+	10: set global transaction isolation level serializable;可序列化
